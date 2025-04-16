@@ -2,7 +2,7 @@ function addRungs(rungs, dist) {
   let prev = 0;
   let count = 0;
 
-  for (let i = 0; i < rungs.langth; i++) {
+  for (let i = 0; i < rungs.length; i++) {
     const gap = rungs[i] - prev;
 
     if (gap > dist) {
@@ -11,5 +11,6 @@ function addRungs(rungs, dist) {
 
     prev = rungs[i];
   }
+
   return count;
 }
