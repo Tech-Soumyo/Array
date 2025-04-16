@@ -1,0 +1,15 @@
+{
+  "name": "array",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "1. smallestChair.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^6.3.2"
+  }
+}
