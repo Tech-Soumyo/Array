@@ -1,24 +1,24 @@
 function combination2(candidates, target) {
   const res = [];
-  candidates.sort((a, b) => a - b);
+  candidates.sort((a, b) => a - b); // Step 1: sort input to handle duplicates
 
-  const backTrack = (start, path, targetLeft) => {
+  const backtrack = (start, path, targetLeft) => {
     if (targetLeft === 0) {
       res.push([...path]);
       return;
     }
 
-    for (i = start; i < candidates.length; i++) {
-      if (i > start && candidates[i] === candidates[i - 1]) continue;
+    for (let i = start; i < candidates.length; i++) {
+      if (i > start && candidates[i] === candidates[i - 1]) continue; // Skip duplicates
 
-      if (candidates[i] > targetLeft) break;
+      if (candidates[i] > targetLeft) break; // Early stopping, no need to go further
 
       path.push(candidates[i]);
-      backTrack(i + 1, path, targetLeft - candidates[i]);
-      path.pop();
+      backtrack(i + 1, path, targetLeft - candidates[i]); // i+1 because we can't reuse
+      path.pop(); // backtrack
     }
   };
 
-  backTrack(0, [], target);
+  backtrack(0, [], target);
   return res;
 }
